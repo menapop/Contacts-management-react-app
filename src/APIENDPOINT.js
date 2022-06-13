@@ -1,1 +1,3 @@
-export const APIENDPOINT = 'http://localhost:3006/'
+ const APIENDPOINT = 'http://localhost:3006/'
+
+ export default APIENDPOINT ;

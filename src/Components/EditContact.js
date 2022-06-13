@@ -1,7 +1,7 @@
 import useSetState from '../CustomHooks/UseSetState.js';
 import {useNavigate, useParams} from 'react-router-dom'; 
 import { useEffect } from 'react';
-import { APIENDPOINT } from '../APIENDPOINT.js';
+import APIENDPOINT  from '../APIENDPOINT.js';
 const EditContact = (props) => {
 
  const navigate = useNavigate();
