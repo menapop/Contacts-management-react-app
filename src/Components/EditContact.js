@@ -1,7 +1,7 @@
 import useSetState from '../CustomHooks/UseSetState.js';
 import {useNavigate, useParams} from 'react-router-dom'; 
 import { useEffect } from 'react';
-
+import { APIENDPOINT } from '../APIENDPOINT.js';
 const EditContact = (props) => {
 
  const navigate = useNavigate();
@@ -29,7 +29,7 @@ const EditContact = (props) => {
   }
 
   useEffect(()=>{
-    fetch(`http://localhost:3006/contacts/${id}`)
+    fetch(`${APIENDPOINT}contacts/${id}`)
     .then(r=>r.json())
     .then (data=>setState(data))
   },[])

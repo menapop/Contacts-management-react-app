@@ -6,10 +6,11 @@ import ContactList from './Components/ContactList';
 import AddContact from './Components/AddContact' ;
 import { useEffect, useState } from 'react';
 import EditContact from './Components/EditContact';
+import APIENDPOINT from './APIENDPOINT';
 function App() {
 
   const addContactHandler =  (contact) =>{
-     fetch('http://localhost:3006/contacts',{
+     fetch(`${APIENDPOINT}contacts`,{
       method:'POST',
       body: JSON.stringify({
         id: uuid(),
@@ -28,7 +29,7 @@ function App() {
     
   }
   const editContactHandler =  (contact) =>{
-    fetch('http://localhost:3006/contacts/'+ contact.id,{
+    fetch(APIENDPOINT+'contacts/'+ contact.id,{
      method:'PUT',
      body: JSON.stringify({
        id: contact.id,
@@ -52,7 +53,7 @@ function App() {
  }
 
  const removeContactHandler =  (id) => {
-  fetch('http://localhost:3006/contacts/'+id,{
+  fetch(APIENDPOINT+'contacts/'+id,{
     method:'DELETE',
      headers: {
     "Content-type": "application/json; charset=UTF-8"
@@ -70,7 +71,7 @@ function App() {
   
 
   const getContacts = () => {
-    fetch('http://localhost:3006/contacts')
+    fetch(APIENDPOINT+'contacts')
     .then(r=>r.json())
     .then(data=>{
       setContacts(data)
