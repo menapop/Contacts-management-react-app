@@ -14,8 +14,7 @@ function App() {
       method:'POST',
       body: JSON.stringify({
         id: uuid(),
-        name: contact.name,
-        email: contact.email
+       ...contact
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
@@ -33,8 +32,7 @@ function App() {
      method:'PUT',
      body: JSON.stringify({
        id: contact.id,
-       name: contact.name,
-       email: contact.email
+       ...contact
    }),
    headers: {
      "Content-type": "application/json; charset=UTF-8"
