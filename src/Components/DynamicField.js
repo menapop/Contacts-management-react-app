@@ -1,7 +1,7 @@
 const DynamicField = ({id,name , value , onTypeChange , onValueChange }) => {
   
     return (
-        <div>
+        <div class="row">
             <select  data-id={id}  name={name}  value={name}  onChange={onTypeChange}   >
                <option value=''> </option>
                <option value="position">position</option>
